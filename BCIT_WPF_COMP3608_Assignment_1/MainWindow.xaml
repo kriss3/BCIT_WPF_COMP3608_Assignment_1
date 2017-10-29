@@ -5,7 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BCIT_WPF_COMP3608_Assignment_1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="BCIT - COMP3608 Krzysztof Szczurowski" Height="600" Width="800" ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="#FFCDE3EE" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Window.Resources>
         <local:ImageFactory x:Key="ImageFactoryDataSource" d:IsDataSource="True"/>
 
@@ -18,18 +24,12 @@
 
     </Window.Resources>
     <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="White" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
         <ComboBox 
             Margin="236,38,0,0"
             HorizontalAlignment="Left" 
             VerticalAlignment="Top" 
             Height="42" Width="235"  
             ItemsSource="{Binding Source={StaticResource ImageFactoryDataSource}, Path=MyImages}" 
-            ItemTemplate="{StaticResource dtImages}"/>
+            ItemTemplate="{StaticResource dtImages}" Grid.Column="2"/>
     </Grid>
 </Window>
